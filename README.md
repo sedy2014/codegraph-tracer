@@ -75,7 +75,7 @@ flowchart LR
 
 [examples/adaboost/](examples/adaboost/) holds a small AdaBoost script. Indexing it with `codegraph init -i .` and running `/cg-trace main` gives this call graph (source: [trace-main.mmd](examples/adaboost/trace-main.mmd)):
 
-![Call graph for main in the AdaBoost example](./examples/adaboost/trace-main.png)
+![Annotated call graph for main in the AdaBoost example](./assets/trace-main-annotated.png)
 
 ## License
 
