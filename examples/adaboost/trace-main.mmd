@@ -1,0 +1,49 @@
+flowchart TB
+  G["if name equals main guard<br/>adaboost.py:56"]
+  subgraph MN["main, defined adaboost.py:47"]
+    M1["make random data X and labels y"]
+    M2["train the model"]
+    M3["score the model"]
+    M4["print accuracy"]
+    M1 --> M2 --> M3 --> M4
+  end
+  subgraph FT["fit, defined adaboost.py:24"]
+    F1["start with equal sample weights"]
+    F2{"for each round"}
+    F3["compute alpha from the error"]
+    F4["reweight samples and normalise"]
+    F1 --> F2 --> F3 --> F4
+  end
+  subgraph BS["best_stump, defined adaboost.py:5"]
+    B1["for each feature, threshold and sign"]
+    B2{"lowest weighted error so far?"}
+    B1 --> B2
+  end
+  subgraph PR["predict, defined adaboost.py:39"]
+    P1["for each stump"]
+    P2["add its weighted vote"]
+    P3["return plus or minus one by sign of total"]
+    P1 --> P2 --> P3
+  end
+  SP["stump_predict<br/>adaboost.py:19"]
+
+  G -- "called at adaboost.py:57" --> MN
+  M2 -- "called at adaboost.py:51" --> FT
+  M3 -- "called at adaboost.py:52" --> PR
+  F2 -- "called at adaboost.py:29" --> BS
+  F3 -- "called at adaboost.py:32" --> SP
+  B1 -- "called at adaboost.py:11" --> SP
+  P2 -- "called at adaboost.py:43" --> SP
+
+  NMN["WHAT IT DOES<br/>Builds sample data, trains the model, prints its accuracy."]
+  NFT["WHAT IT DOES<br/>Trains by repeatedly picking a stump and reweighting samples."]
+  NBS["WHAT IT DOES<br/>Finds the single best yes-or-no split of the data."]
+  NPR["WHAT IT DOES<br/>Combines all stumps into one weighted vote."]
+  NSP["WHAT IT DOES<br/>Predicts plus or minus one from one feature and a threshold."]
+  MN -.- NMN
+  FT -.- NFT
+  BS -.- NBS
+  PR -.- NPR
+  SP -.- NSP
+  classDef note fill:#fff8d6,stroke:#c9a227,color:#333
+  class NMN,NFT,NBS,NPR,NSP note

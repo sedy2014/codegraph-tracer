@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "sedy2014-tools",
+  "description": "Unofficial helper plugins for use with CodeGraph.",
+  "owner": {
+    "name": "Sidharth Mahotra",
+    "url": "https://www.linkedin.com/in/sidharthmahotra"
+  },
+  "plugins": [
+    {
+      "name": "codegraph-tracer",
+      "source": "./",
+      "description": "Unofficial slash commands (/cg-trace, /cg-ask) that use CodeGraph to trace call graphs as Mermaid diagrams and answer code questions.",
+      "category": "development",
+      "tags": ["codegraph", "call-graph", "mermaid", "code-search"],
+      "keywords": ["codegraph", "call-graph", "mermaid", "code-search", "tracing"],
+      "homepage": "https://github.com/sedy2014/codegraph-tracer",
+      "repository": "https://github.com/sedy2014/codegraph-tracer",
+      "license": "Apache-2.0"
+    }
+  ]
+}

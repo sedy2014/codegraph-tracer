@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "codegraph-tracer",
+  "displayName": "CodeGraph Tracer",
+  "version": "0.1.0",
+  "description": "Unofficial slash commands (/cg-trace, /cg-ask) that use CodeGraph to trace call graphs as Mermaid diagrams and answer code questions.",
+  "author": {
+    "name": "Sidharth Mahotra",
+    "url": "https://www.linkedin.com/in/sidharthmahotra"
+  },
+  "homepage": "https://github.com/sedy2014/codegraph-tracer",
+  "repository": "https://github.com/sedy2014/codegraph-tracer",
+  "license": "Apache-2.0",
+  "keywords": ["codegraph", "call-graph", "mermaid", "code-search", "tracing"]
+}
